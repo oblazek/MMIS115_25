@@ -1,0 +1,37 @@
+// TODO: write jsdoc compatible comments for code documentation
+ModularMVC.registerHelper('helper.init', function (Widget, LanguageModule) {
+	/* public methods */
+	var interFace = {
+		// TODO: write jsdoc compatible comments for code documentation
+		onWidgetReady: function(){
+			debug("helper.init onWidgetReady: initialized the localization strings");
+			
+			var lang = Widget().getPreference('lang');
+			
+			debug("helper.init: set language preference: " + lang);
+			debug("helper.init: initialize the language module now");
+			
+			LanguageModule().properties({
+				usefile: false,
+				language: lang,
+				translations: {
+					en: {
+							// TODO: add your language pairs here for English
+						},
+					de: {
+							// TODO: add your language pairs here for Deutsch
+						}
+						// TODO: add your language pairs here for other languages if desired
+				}
+			});
+		}
+		/* end of public methods */
+	};
+	
+	/* private methods */
+	
+	/* end of private methods */
+	
+	debug('helper.init loaded');
+	return interFace;
+}(ModularMVC.MVCHelper('Widget'), ModularMVC.MVCHelper('Language')));

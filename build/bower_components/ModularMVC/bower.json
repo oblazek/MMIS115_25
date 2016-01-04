@@ -1,0 +1,25 @@
+{
+  "name": "ModularMVC",
+  "version": "1.0.0",
+  "authors": [
+    "Behnam Taraghi <b.taraghi@tugraz.at>"
+  ],
+  "description": "Modular framework based on MVC design architectur used for developing widgets",
+  "main": "ModularMVC.min.js",
+  "moduleType": [],
+  "keywords": [
+    "widget", "MVC"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

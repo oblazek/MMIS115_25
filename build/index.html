@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+	<head>
+		  <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+     
+      	<link rel="stylesheet" href="bower_components/jquery-mobile-bower/css/jquery.mobile-1.4.5.css"/>
+      	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+      	<script type="text/javascript" src="bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="bower_components/ModularMVC/ModularMVC.min.js"></script>
+      	<link rel="stylesheet" href="css/styles.css"> 
+		
+        <!-- <script type="text/javascript" src="js/application.js"></script> -->
+        
+        <script type="text/javascript" src="js/jquery.runner.js" ></script>
+		<!-- TODO: add a corresponding title for your widget -->
+		<title>Geography quiz - widget</title>
+
+		<!-- TODO: CSS and JavaScript dependencies / bower components-->
+		
+		<!--defining some helpful functions (before loading js files, debug is used there)-->
+		<script type="text/javascript">
+			//debug function
+			function debug(msg){
+				if(typeof console != 'undefined' && typeof console.log != 'undefined') {
+					console.log(msg);
+				}
+			}
+		</script>
+  
+    <script type="text/javascript" src="js/controller.js" ></script>
+    <script type="text/javascript" src="js/view.js" ></script>
+    <!-- <script type="text/javascript" src="js/model.js" ></script>
+    <script type="text/javascript" src="js/helper.serverapi.js" ></script>
+		-->
+		
+		
+		<!-- TODO: 
+			implement your modules: helpers, models, views and controllers, name them logically
+			add additional modules if required, distribute the functionality among different modules
+			try to use a model, view and controller for each page separately
+			<script type="text/javascript" src="js/helper.init.js"></script>
+
+		-->
+	</head>
+	<body>
+		
+		<!-- fist page -->
+		<div id="home" data-role="page" data-title="Geography Quiz App - TU Graz">
+        
+        <div id="header" data-role="header" data-position="fixed">    <!-- data-id="headers" if I dont won't headers to flicker-->  
+          <h1>The Geography Quiz</h1>
+          <a href="#home" data-icon="star">Deutsch</a> <!--Doesn't lead anywhere yet-->
+          <!-- <a href="#result" data-icon="star">Results</a> -->
+        </div>
+      
+        <div id="footer" data-role="footer" data-position="fixed">
+        </div><!-- footer -->
+
+        <div id="startbutton" data-role="content"><!-- data-role="content" -->
+          <a class="starts" href="#start" data-role="button">START</a>
+        </div> <!-- startbutton -->
+
+        <div id="infoBox" data-role="content" class="center">
+          <p>Welcome to the Geography Quiz. This application tests your European country skills. Press Start to begin the journey!</p>
+          <!--Willkommen in der Geographie-Quiz. Diese Anwendung testet Ihre Fähigkeiten europäischen Land. Drücken Sie auf Start, um die Reise zu beginnen!-->
+        </div>
+      
+      </div><!-- home page -->
+
+
+      <div id="start" data-role="page" data-title="Geography quiz app - TU Graz">
+      
+        <div id="header" data-role="header" data-position="fixed">   
+          <h2 id="setRunner"></h2>
+          <!-- <h4 id="setRunner"></h4> -->
+          <div id="head2"></div> <!-- place for the question -->
+          <a href="#home" data-icon="home" data-iconpos="notext">HOME</a>
+          <a href="#result" data-icon="star" id="results">Results</a>
+        </div><!-- header -->
+
+        <div id="img_centering">
+          <img class="imgs" id="img_1">
+          <img class="imgs" id="img_2">
+        </div>
+
+          
+        <fieldset data-role="controlgroup">
+          <div id="radio_centering" > 
+          <input type="radio" name="radio-choice" id="radio1" value="choice1" /><label class="radio_centering" for="radio1"></label>
+          <input type="radio" name="radio-choice" id="radio2" value="choice2" /><label class="radio_centering"  for="radio2"></label>
+          <input type="radio" name="radio-choice" id="radio3" value="choice3" /><label class="radio_centering" for="radio3"></label>
+          <input type="radio" name="radio-choice" id="radio4" value="choice4" /><label class="radio_centering" for="radio4"></label> 
+          </div>
+        </fieldset>
+          
+        
+
+        <div id="footer" data-role="footer" data-position="fixed"> <!--question footer-->
+          <div data-role="navbar">
+            <ul>
+              <li>
+                <a id="back" style="display: none" data-role="button" data-icon="carat-l">BACK</a>
+              </li>
+              <li>
+                <a id="next" style="display: none" data-role="button" data-icon="carat-r">NEXT</a>
+              </li>
+            </ul>
+          </div> <!-- navbar -->
+        </div><!-- footer -->    
+
+      </div><!-- start page -->
+
+
+
+
+      <div id="result" data-role="page" data-title="Geography quiz app - TU Graz">
+
+        <div id="header" data-role="header" data-position="fixed">
+          <h1>Result!</h1>
+          <a href="#home" data-icon="home" data-iconpos="notext">HOME</a>
+        </div><!-- header -->
+
+        <div id="footer" data-role="footer" data-position="fixed">
+        </div><!-- footer -->
+
+        <div id="playagain" data-role="content">
+          <a class="starts" href="#start" data-role="button">PLAY AGAIN</a>
+        </div> <!-- startbutton -->
+
+        <div id="infoBox" data-role="content" class="center">
+          <p>Congratulations! You made it through the quiz. Your result is: </p>
+          <h2 id="getRunner"></h2>
+          <p id="rightAnswers"></p>
+          <p id="wrongAnswers"></p>
+
+          <!--Willkommen in der Geographie-Quiz. Diese Anwendung testet Ihre Fähigkeiten europäischen Land. Drücken Sie auf Start, um die Reise zu beginnen!-->
+        </div>
+
+
+      </div><!--result page -->
+
+        
+        
+        
+        <!-- TODO: add other pages, dialogs or popups according your widget's requirements -->
+        
+       <!--  
+        <div data-role="dialog" id="pageErrorDialog">
+        	<div data-theme="a" data-role="header">
+                <h3><span lang="en">ERROR_MSG</span></h3>
+            </div>
+            <div data-role="content">
+            	<span>
+            		TODO:  
+            			write a user friendly error message dynamically if an error happens such as:
+            			- false user inputs
+            			- failed XHRs
+            			- ...
+            			translate the error message before writing into the DOM
+            		
+            	</span>
+            </div>
+        </div>
+ -->
+	</body>
+</html>

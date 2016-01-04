@@ -1,0 +1,30 @@
+{
+  "name": "Geography widget",
+  "version": "1.0.0",
+  "authors": [
+    "Ondrej Blazek <oblazek@student.tugraz.at>",
+    "Cecilia Ritzen <critzen@student.tugraz.at>"
+  ],
+  "description": "A geography application for primary-school students.",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "widget",
+    "geography",
+    "europe countries"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "ModularMVC": "../../../portal/js/libs/ModularMVC/"
+  }
+}

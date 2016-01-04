@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		
+		<!-- TODO: add a corresponding title for your widget -->
+		<title>My Widget Title</title>
+
+		<!-- TODO: CSS and JavaScript dependencies / bower components-->
+		
+		<!--defining some helpful functions (before loading js files, debug is used there)-->
+		<script type="text/javascript">
+			//debug function
+			function debug(msg){
+				if(typeof console != 'undefined' && typeof console.log != 'undefined') {
+					console.log(msg);
+				}
+			}
+		</script>
+		
+		
+		
+		<!-- TODO: 
+			implement your modules: helpers, models, views and controllers, name them logically
+			add additional modules if required, distribute the functionality among different modules
+			try to use a model, view and controller for each page separately
+			<script type="text/javascript" src="js/helper.init.js"></script>
+		-->
+	</head>
+	<body>
+		
+		<!-- fist page -->
+		<div data-role="page" id="">
+			<div data-role="header">
+				<h3>remove or adjust the header</h3>
+			</div>
+            <div data-role="content">
+            	<span>wish you a funny widgetization :-)<br /> apropos this is a no CSS template ;-)<br /> start developing now!</span>
+            </div>
+            <div data-role="footer">
+				<h3>remove or adjust the footer</h3>
+			</div>
+        </div>
+        
+        
+        <!-- TODO: add other pages, dialogs or popups according your widget's requirements -->
+        
+        
+        <div data-role="dialog" id="pageErrorDialog">
+        	<div data-theme="a" data-role="header">
+                <h3><span lang="en">ERROR_MSG</span></h3>
+            </div>
+            <div data-role="content">
+            	<span>
+            		<!--TODO:  
+            			write a user friendly error message dynamically if an error happens such as:
+            			- false user inputs
+            			- failed XHRs
+            			- ...
+            			translate the error message before writing into the DOM
+            		-->
+            	</span>
+            </div>
+        </div>
+
+	</body>
+</html>
