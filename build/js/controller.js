@@ -2,7 +2,7 @@
  * Controller Module
  *
  * @module controller
- * @author Óndrej Blazek, Cecilia Ritzen <oblazek@student.tugraz.at>, <critzen@student.tugraz.at>
+ * @author Ondrej Blazek, Cecilia Ritzen <oblazek@student.tugraz.at>, <critzen@student.tugraz.at>
  * @requires module:view
  * @requires module:helper-serverapi
  *
@@ -13,16 +13,7 @@ ModularMVC.registerController('controller', function (View, Widget) {
 	
 	/* public methods */
     var interFace = {
-    	/**
-    	 * retrieves the user's interest data from model if exists otherwise from sample API
-    	 * @see {@link module:model-interestsdata.getInterests}
-    	 * @see {@link module:model-interestsdata.setInterests}
-		 * @see {@link module:helper-serverapi.getUserInterests}
-		 * @see {@link module:view-interestsdata.showUserInterestsData}
-		 *
-		 * @public
-		 * @memberOf module:controller-interestsdata
-    	 */
+    	
     	//  onRegister: function() {
     	// // 	//debug('***********************');
     	// // 	//debug('Controller - Registered');
