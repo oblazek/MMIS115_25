@@ -7,7 +7,7 @@
  * @requires jQuery
  *
  * @version 1.0.0
- * @license Apache-2.0
+ * 
  */
 ModularMVC.registerView('view', function (Controller, $) {
 
@@ -45,11 +45,22 @@ ModularMVC.registerView('view', function (Controller, $) {
            	$('#img_2').attr('src', array.questions[indexOfQuestions].img[1]);
            	
            	$('#next').click(function(){
+           		if($("input:radio[name=radio-choice]:checked").attr('value')===array.questions[indexOfQuestions].q[1]){
+            		$('#rightAnswers').css("color", "#00ff00");
+            		$('#rightAnswers').append((indexOfQuestions+1)+'. Answer correct : '+array.questions[indexOfQuestions].q[1]+'<br>');
+          		}
+          		else{
+            		$('#wrongAnswers').css("color", "red");
+           			$('#wrongAnswers').append((indexOfQuestions+1)+'. Answer incorrect: '+$("input:radio[name=radio-choice]:checked").attr('value')+'<br>');  
+          		}
+
+          		$("input:radio[name=radio-choice]").prop("checked", false).checkboxradio( "refresh" );
+
            		indexOfQuestions++;
+
 				if(indexOfQuestions>0){
 					$('#back').show();	
 				}
-	            
 	          	
 				if(indexOfQuestions === 41){
 					$('#next').hide();
@@ -59,6 +70,25 @@ ModularMVC.registerView('view', function (Controller, $) {
 	            $('#img_1').attr('src', array.questions[indexOfQuestions].img[0]);  
 	           	$('#img_2').attr('src', array.questions[indexOfQuestions].img[1]);		
         	});
+
+			$('#back').click(function()
+      		{
+		        if(indexOfQuestions < 42){
+		        	$('#next').show();	
+		        }
+		          
+		        if(indexOfQuestions>=1){
+		          indexOfQuestions--;    
+		            
+		        }
+		        if (indexOfQuestions==0){  
+		            $('#back').hide(); 
+		          }
+		        $("input:radio[name=radio-choice]").prop("checked", false).checkboxradio( "refresh" );      
+		        $('#head2').text(array.questions[indexOfQuestions].q[0]);
+		        $('#img_1').attr('src', array.questions[indexOfQuestions].img[0]);  
+		        $('#img_2').attr('src', array.questions[indexOfQuestions].img[1]);   
+      		});
 		},
 
 		viewLabels: function(array2, indexOfHelperArray) {
@@ -72,6 +102,7 @@ ModularMVC.registerView('view', function (Controller, $) {
 		    $('#radio4').attr('value', array2[indexOfHelperArray+3]);
 
 		    $('#next').click(function(){
+
 		    	indexOfHelperArray+=4;
         		$('label[for=radio1]').html(array2[indexOfHelperArray]);
 	      		$('label[for=radio2]').html(array2[indexOfHelperArray+1]);
@@ -81,6 +112,16 @@ ModularMVC.registerView('view', function (Controller, $) {
 			    $('#radio2').attr('value', array2[indexOfHelperArray+1]);
 			    $('#radio3').attr('value', array2[indexOfHelperArray+2]);
 			    $('#radio4').attr('value', array2[indexOfHelperArray+3]);	
+        	});
+
+        	$('#back').click(function(){
+        		if(indexOfHelperArray>=1){
+		          indexOfHelperArray-=4;  
+		        }
+        		$('label[for=radio1]').html(array2[indexOfHelperArray]);
+		        $('label[for=radio2]').html(array2[indexOfHelperArray+1]);
+		        $('label[for=radio3]').html(array2[indexOfHelperArray+2]);
+		        $('label[for=radio4]').html(array2[indexOfHelperArray+3]);
         	});
 		}
 
@@ -105,6 +146,10 @@ ModularMVC.registerView('view', function (Controller, $) {
     		$('#setRunner').runner();
     		$('#setRunner').runner('start');	 
         });
+        $('#results').click(function(){
+        	$('#setRunner').runner('stop');
+        	$('#getRunner').html('Your time: '+ $('#setRunner').runner('lap'));
+      	}); //end of result
 
          
     };
