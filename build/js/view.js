@@ -9,7 +9,7 @@
  * @version 1.0.0
  * 
  */
-ModularMVC.registerView('view', function (Controller, $) {
+ModularMVC.registerView('view', function(Controller, LanguageModule, $) {
 
 	/* public methods */
 
@@ -22,18 +22,10 @@ ModularMVC.registerView('view', function (Controller, $) {
 		 * @memberOf module:view-interestsdata
 		 * @see {@link module:view-interestsdata._setClickEvents}
 		 */
-		//  onRegister: function() {
-		// // 	//debug('View - Registered');
-		//  },
-
-		//  onDomReady: function() {
-		// // 	//debug('View - DomReady');
-		// // 	//Controller().getAppData();
-		// // 	//_setClickEvents();
-		//  },
 
 		onWidgetReady: function() {
 			//debug('View - WidgetReady');
+			LanguageModule().translatePage('home');
 			_setClickEvents();
 		},
 
@@ -81,7 +73,7 @@ ModularMVC.registerView('view', function (Controller, $) {
 		          indexOfQuestions--;    
 		            
 		        }
-		        if (indexOfQuestions==0){  
+		        if (indexOfQuestions===0){  
 		            $('#back').hide(); 
 		          }
 		        $("input:radio[name=radio-choice]").prop("checked", false).checkboxradio( "refresh" );      
@@ -152,10 +144,19 @@ ModularMVC.registerView('view', function (Controller, $) {
       	}); //end of result
 
          
+    },
+
+    _setPageInitEvent = function() {
+		
+		//debug('View _setPageInitEvent(): set jQuery mobile init event for page interests');
+        $("#home").bind('pageinit', function() {
+			//debug('View pageinit Event triggered: notice the Controller that the user wants to see the Interests data');
+			LanguageModule().translatePage('home');
+        });
     };
 	
 	/* end of private methods */
 
 	//debug('view.interestsdata loaded');
     return interFace;
-}(ModularMVC.Controller('controller'), jQuery));
+}(ModularMVC.Controller('controller'), ModularMVC.MVCHelper('Language'), jQuery));
