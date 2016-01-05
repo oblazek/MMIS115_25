@@ -1,13 +1,9 @@
-<widget xmlns="http://www.w3.org/TR/widgets/"
-	xmlns:palette="http://palette.ercim.org/ns/"
-	width="600"
-	height="600"
-	id="MMIS115_25">
+<widget xmlns="http://www.w3.org/TR/widgets/" xmlns:palette="http://palette.ercim.org/ns/" width="600" height="600" id="MMIS115_25">
 
     <title>Geography quiz</title>
 	<author url="" email="oblazek@student.tugraz.at, critzen@student.tugraz.at">Ondrej Blazek, Cecilia Ritzen</author>
-    <description>Geography Quiz</description>
-	<icon src="icon.png" width="16" height="16" />
+    <description>Geography Quiz widget</description>
+	<icon src="icon.png" width="16" height="16"/>
 
 	<content src="build/index.html"/>
 
