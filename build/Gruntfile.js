@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         browser: true,
         globals: {
           jQuery: true,
-          ModularMVC: true,
+          ModularMVC: true,// 
           debug: true
         }
       },
@@ -55,12 +55,6 @@ module.exports = function(grunt) {
       dist: {
         src: '<%= concat.dist.dest %>',
         dest: '../dist/js/<%= pkg.name %>.min.js'
-      }
-    },
-    cssmin: {
-      dist: {
-        src: 'css/styles.css',
-        dest: 'tmp/<%= pkg.name %>.min.css'
       }
     },
     jsdoc: {
@@ -101,13 +95,51 @@ module.exports = function(grunt) {
         }
       }
     },
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'css/',
+          src: ['*.css', '!*.min.css'],
+          dest: '../dist/css',
+          ext: '.min.css'
+        }]
+      }
+    },
+    // cssmin: {
+    //   dist: {
+    //     src: 'css/styles.css',
+    //     dest: 'tmp/<%= pkg.name %>.min.css'
+    //   }
+    // },
     copy: {
       DISTbowercomponents: {
         files: [
           {dest: '../dist/js/libs/ModularMVC.min.js', src: 'bower_components/ModularMVC/ModularMVC.min.js'},
-          {dest: '../dist/js/libs/jquery.min.js', src: 'bower_components/jquery/dist/jquery.min.js'},
-          {dest: '../dist/js/libs/jquery.min.map', src: 'bower_components/jquery/dist/jquery.min.map'}
+          {dest: '../dist/js/libs/jquery.min.js', src: 'bower_components/jquery/jquery.min.js'},
+          {dest: '../dist/js/libs/jquery.min.map', src: 'bower_components/jquery/jquery.min.map'},
+          {dest: '../dist/css/jquery.mobile-1.4.5.min.css', src: 'bower_components/jquery-mobile-bower/css/jquery.mobile-1.4.5.min.css'},
+          {dest: '../dist/js/libs/jquery.mobile-1.4.5.min.js', src: 'bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.min.js'},
+          {dest: '../dist/js/libs/jquery.mobile-1.4.5.min.map', src: 'bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.min.map'},
         ]
+      },
+      DISTApifiles: {
+        files: [{
+          cwd: 'js/',
+          src: ['*.json'],
+          dest: '../dist/js/',
+          expand: true
+        }, {
+          cwd: 'js/images/',
+          src: ['*.*'],
+          dest: '../dist/js/images/',
+          expand: true
+        }, {
+          cwd: 'css/',
+          src: ['*.png'],
+          dest: '../dist/css/',
+          expand: true
+        }]
       },
       DISTdocfiles: {
         files: [{
