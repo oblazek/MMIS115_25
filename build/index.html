@@ -5,16 +5,12 @@
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Geography quiz - widget</title>  
         
-      	<link type="text/css" rel="stylesheet" href="bower_components/jquery-mobile-bower/css/jquery.mobile-1.4.5.min.css"/>
+      	<link type="text/css" href="bower_components/jquery-mobile-bower/css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+
       	<script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
       	<script type="text/javascript" src="bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="bower_components/ModularMVC/ModularMVC.min.js"></script>
       	<link type="text/css" rel="stylesheet" href="css/styles.css"> 
-		
-        <script type="text/javascript" src="js/jquery.runner.js" ></script>
-		
-
-		
 		
 		<!--defining some helpful functions (before loading js files, debug is used there)-->
 		<script type="text/javascript">
@@ -25,9 +21,12 @@
 				}
 			}
 		</script>
-  
+
+    <script type="text/javascript" src="js/helper.init.js" ></script>
     <script type="text/javascript" src="js/controller.js" ></script>
     <script type="text/javascript" src="js/view.js" ></script>
+    <script type="text/javascript" src="js/jquery.runner.js" ></script>
+    
     <!-- <script type="text/javascript" src="js/model.js" ></script>
     <script type="text/javascript" src="js/helper.serverapi.js" ></script>
 		-->
@@ -38,7 +37,7 @@
 		<div id="home" data-role="page" data-title="Geography Quiz App - TU Graz">
         
         <div id="header" data-role="header" data-position="fixed">    <!-- data-id="headers" if I dont won't headers to flicker-->  
-          <h1>The Geography Quiz</h1>
+          <h1><span lang="en">QUIZ</span></h1>
           <a href="#home" data-icon="star">Deutsch</a> <!--Doesn't lead anywhere yet-->
           <!-- <a href="#result" data-icon="star">Results</a> -->
         </div>
@@ -47,7 +46,7 @@
         </div><!-- footer -->
 
         <div id="startbutton" data-role="content"><!-- data-role="content" -->
-          <a class="starts" href="#start" data-role="button">START</a>
+          <a class="starts" href="#start" data-role="button"><span lang="en">START_BUTTON</span></a>
         </div> <!-- startbutton -->
 
         <div id="infoBox" data-role="content" class="center">
@@ -55,10 +54,10 @@
           <!--Willkommen in der Geographie-Quiz. Diese Anwendung testet Ihre Fähigkeiten europäischen Land. Drücken Sie auf Start, um die Reise zu beginnen!-->
         </div>
       
-      </div><!-- home page -->
+    </div><!-- home page -->
 
 
-      <div id="start" data-role="page" data-title="Geography quiz app - TU Graz">
+    <div id="start" data-role="page" data-title="Geography quiz app - TU Graz">
       
         <div id="header" data-role="header" data-position="fixed">   
           <h2 id="setRunner"></h2>
@@ -89,7 +88,7 @@
           <div data-role="navbar">
             <ul>
               <li>
-                <a id="back" style="display: none" data-role="button" data-icon="carat-l">BACK</a>
+                <a id="back" style="display: none" data-role="button" data-icon="carat-l"><span lang="en">BACK</span></a>
               </li>
               <li>
                 <a id="next" style="display: none" data-role="button" data-icon="carat-r">NEXT</a>
@@ -98,12 +97,12 @@
           </div> <!-- navbar -->
         </div><!-- footer -->    
 
-      </div><!-- start page -->
+    </div><!-- start page -->
 
 
 
 
-      <div id="result" data-role="page" data-title="Geography quiz app - TU Graz">
+    <div id="result" data-role="page" data-title="Geography quiz app - TU Graz">
 
         <div id="header" data-role="header" data-position="fixed">
           <h1>Result!</h1>
@@ -124,10 +123,10 @@
           <p id="wrongAnswers"></p>
 
           <!--Willkommen in der Geographie-Quiz. Diese Anwendung testet Ihre Fähigkeiten europäischen Land. Drücken Sie auf Start, um die Reise zu beginnen!-->
-        </div>
+        </div> <!-- info box -->
 
 
-      </div><!--result page -->
+    </div><!--result page -->
 
 	</body>
 </html>
