@@ -68,8 +68,8 @@ module.exports = function(grunt) {
             src: ['js/*.js', 'README.md', 'package.json'],
             options: {
                 destination: 'tmp/',
-                template : "node_modules/ink-docstrap/template",
-                configure : "jsdoc.conf.json"
+                // template : "node_modules/ink-docstrap/template",
+                // configure : "jsdoc.conf.json"
             }
         }
     },
