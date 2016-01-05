@@ -1,14 +1,13 @@
 /**
  * Controller Module
  *
- * @module controller-interestsdata
- * @author Behnam Taraghi <b.taraghi@tugraz.at>
- * @requires module:model-interestsdata
- * @requires module:view-interestsdata
+ * @module controller
+ * @author Óndrej Blazek, Cecilia Ritzen <oblazek@student.tugraz.at>, <critzen@student.tugraz.at>
+ * @requires module:view
  * @requires module:helper-serverapi
  *
  * @version 1.0.0
- * @license Apache-2.0
+ * 
  */
 ModularMVC.registerController('controller', function (View, Widget) {
 	
@@ -65,10 +64,9 @@ ModularMVC.registerController('controller', function (View, Widget) {
 	            a1 = array.questions[indexOfQuestions].q[1];
 	            
 	            var num = Math.floor(Math.random() * array1.length);
-	            // while(num == 0)
-	            //   num = Math.floor(Math.random() * array1.length+1);
+	            
 	            num1 = 0; num2 = 0; num3 = 0; num4 = 0;
-	            //console.log('num pred forem 1-5: '+num+' '+array.mix[num]);
+	            
 	            for(var l = 1; l < 5; l ++)
 	            {
 
@@ -114,11 +112,11 @@ ModularMVC.registerController('controller', function (View, Widget) {
 	                        break;
 	                      } //end of switch
 	                      num = Math.floor(Math.random() * array1.length);
-	                      //console.log('num ve foru 1-5: '+num+' '+y+' '+array.mix[num]);
+	                      
 	                      while(num1===num || num2===num || num3===num || num4===num)
 	                      {
 	                        num = Math.floor(Math.random() * array1.length);
-	                        //console.log('num pokud by predchozi bylo stejny: '+num+' '+y);
+	                        
 	                      }
 	                      
 	     
@@ -137,14 +135,14 @@ ModularMVC.registerController('controller', function (View, Widget) {
 	          
 	          View().viewLabels(array2, indexOfHelperArray);
 			});	//end of getJSON
-		}, //end of getAppData
+		} //end of getAppData
 		
-		nextClicked: function(array2, indexOfHelperArray){
-			//debug('next clicked');
-			indexOfHelperArray+=4;
-			View().viewLabels(array2, indexOfHelperArray);
+		// nextClicked: function(array2, indexOfHelperArray){
+		// 	//debug('next clicked');
+		// 	indexOfHelperArray+=4;
+		// 	View().viewLabels(array2, indexOfHelperArray);
 
-		}
+		// }
 	};
 	
 	/* end of public methods */
