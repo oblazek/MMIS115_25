@@ -1,4 +1,4 @@
-# MMIS115_25 - Geography widget
+### Geography widget
 
 By Ondrej Blazek and Cecilia Ritzén
 
