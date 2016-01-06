@@ -2,25 +2,32 @@
 
 By Ondrej Blazek and Cecilia Ritzén
 
-### Description ()
+### Description 
 
 The geography widget is a geography quiz that examines knowledge of the European countries. The target group is primary school students. The quiz should provide a good way to check basic geography skills fast and entertaining.
 
 The user is for every question provided with a picture of the country and where it is headed on the European map. The multiple choice answers are randomly given for every question. When all questions are gone through the user gets the opportunity to see the results of every answered questions together with how long it took to complete the quiz.
-### Screenshots ()
+### Screenshots 
+#### Home page:
+![alt text](../../screenshots/screen_1.png "Screenshot #1")
 
-### Used APIs ()
+#### Start page:
+![alt text](../../screenshots/screen_2.png "Screenshot #2")
 
-### Used libs ()
+#### Results:
+![alt text](../../screenshots/screen_3.png "Screenshot #3")
+### Used APIs 
 
-### Dependencies ()
+### Used libs 
+
+### Dependencies 
 
 The widget has got three packages installed via Bower:
 - ModularMVC
 - jquery
 - jquery-mobile-bower
 
-### Structure of modules ()
+### Structure of modules 
 This widget is implemented using ModularMVC framework. This means that the following modules are implemented as support for the framework:
 - Controller. The logic layer that controls what is happening in the widget.
 - Model. The data layer for application data.
