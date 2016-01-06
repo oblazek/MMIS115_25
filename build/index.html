@@ -25,6 +25,7 @@
     <script type="text/javascript" src="js/helper.init.js" ></script>
     <script type="text/javascript" src="js/controller.js" ></script>
     <script type="text/javascript" src="js/view.js" ></script>
+   
     <script type="text/javascript" src="js/jquery.runner.js" ></script>
     
     <!-- <script type="text/javascript" src="js/model.js" ></script>
@@ -38,7 +39,7 @@
         
         <div id="header" data-role="header" data-position="fixed">    <!-- data-id="headers" if I dont won't headers to flicker-->  
           <h1><span lang="en">QUIZ</span></h1>
-          <a href="#home" data-icon="star">Deutsch</a> <!--Doesn't lead anywhere yet-->
+         <a href="#home" data-icon="star" type="reset" id="languageSwitch" lang="en">LANG</a>
           <!-- <a href="#result" data-icon="star">Results</a> -->
         </div>
       
@@ -50,10 +51,10 @@
         </div> <!-- startbutton -->
 
         <div id="infoBox" data-role="content" class="center">
-          <p>Welcome to the Geography Quiz. This application tests your European country skills. Press Start to begin the journey!</p>
+          <p lang="en">WELCOME</p>
           <!--Willkommen in der Geographie-Quiz. Diese Anwendung testet Ihre Fähigkeiten europäischen Land. Drücken Sie auf Start, um die Reise zu beginnen!-->
         </div>
-      
+        
     </div><!-- home page -->
 
 
@@ -64,7 +65,7 @@
           <!-- <h4 id="setRunner"></h4> -->
           <div id="head2"></div> <!-- place for the question -->
           <a href="#home" data-icon="home" data-iconpos="notext">HOME</a>
-          <a href="#result" data-icon="star" id="results">Results</a>
+          <a href="#result" data-icon="star" id="results"><span lang="en">RESULTS</span></a>
         </div><!-- header -->
 
         <div id="img_centering">
@@ -91,7 +92,7 @@
                 <a id="back" style="display: none" data-role="button" data-icon="carat-l"><span lang="en">BACK</span></a>
               </li>
               <li>
-                <a id="next" style="display: none" data-role="button" data-icon="carat-r">NEXT</a>
+                <a id="next" style="display: none" data-role="button" data-icon="carat-r"><span lang="en">NEXT</span></a>
               </li>
             </ul>
           </div> <!-- navbar -->
@@ -105,7 +106,7 @@
     <div id="result" data-role="page" data-title="Geography quiz app - TU Graz">
 
         <div id="header" data-role="header" data-position="fixed">
-          <h1>Result!</h1>
+          <h1><span lang="en">RESULT</span></h1>
           <a href="#home" data-icon="home" data-iconpos="notext">HOME</a>
         </div><!-- header -->
 
