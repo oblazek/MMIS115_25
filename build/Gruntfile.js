@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>;' +
       ' Licensed <%= pkg.license %> */\n',
-    // Task configuration.
+      
     jshint: {
       options: {
         curly: true,
@@ -62,8 +62,8 @@ module.exports = function(grunt) {
             src: ['js/*.js', 'README.md', 'package.json'],
             options: {
                 destination: 'tmp/',
-                // template : "node_modules/ink-docstrap/template",
-                // configure : "jsdoc.conf.json"
+                 template : "node_modules/ink-docstrap/template",
+                 configure : "jsdoc.conf.json"
             }
         }
     },
