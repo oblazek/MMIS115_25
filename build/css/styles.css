@@ -14,9 +14,18 @@
     height: 380px;
     padding: 10px;
     color: black;
-    /*background-color: gray;*/
+}
 
-    }
+#infoBox2{
+    /*display:inline-block;*/
+    margin: auto;
+    min-width: 170px;
+    width: 90%;
+    height: 380px;
+    padding: 10px;
+    color: black;
+
+}
 
 .radio_centering{
     display: block;
@@ -54,7 +63,7 @@
     max-height: 182px;
     /*min-width: 90px; */
     vertical-align: top;
-    background:rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.8);
 }
 
 #img_2{
@@ -81,24 +90,17 @@ h1, p{
     text-shadow: none;
     color: black;
 }
+
 #rightAnswers{
     color: #00ff00;
     font-weight: 900;
 }
+
 #wrongAnswers{
     color: red;
     font-weight: 900;
 }
-#nextQuestion{
-    text-shadow: none;
-    color: black;
-    width: 20%;
-    min-width: 150px;
-    margin: auto;
-    padding: 10px;
-    border:3px solid gray;
-    background:rgba(255,255,255,0.8);
-}
+
 #start{
     background-color: gray;
 }
