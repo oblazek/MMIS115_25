@@ -137,7 +137,7 @@ module.exports = function(grunt) {
         }, {
           cwd: 'screenshots/',
           src: ['*.*'],
-          dest: '../dist/screenshots/',
+          dest: '../screenshots/',
           expand: true
         }, {
           cwd: 'css/',
