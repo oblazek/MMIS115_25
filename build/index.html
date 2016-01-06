@@ -12,7 +12,7 @@
         <script type="text/javascript" src="bower_components/ModularMVC/ModularMVC.min.js"></script>
       	<link type="text/css" rel="stylesheet" href="css/styles.css"> 
 		
-		<!--defining some helpful functions (before loading js files, debug is used there)-->
+		
 		<script type="text/javascript">
 			//debug function
 			function debug(msg){
@@ -25,34 +25,31 @@
     <script type="text/javascript" src="js/helper.init.js" ></script>
     <script type="text/javascript" src="js/controller.js" ></script>
     <script type="text/javascript" src="js/view.js" ></script>
-   
+    <script type="text/javascript" src="js/model.js" ></script>
+    <script type="text/javascript" src="js/helper.serverapi.js" ></script>
     <script type="text/javascript" src="js/jquery.runner.js" ></script>
     
-    <!-- <script type="text/javascript" src="js/model.js" ></script>
-    <script type="text/javascript" src="js/helper.serverapi.js" ></script>
-		-->
 	</head>
 	<body>
 		
 		<!-- fist page -->
 		<div id="home" data-role="page" data-title="Geography Quiz App - TU Graz">
         
-        <div id="header" data-role="header" data-position="fixed">    <!-- data-id="headers" if I dont won't headers to flicker-->  
+        <div id="header" data-role="header" data-position="fixed">    
           <h1><span lang="en">QUIZ</span></h1>
          <a href="#home" data-icon="star" type="reset" id="languageSwitch" lang="en">LANG</a>
-          <!-- <a href="#result" data-icon="star">Results</a> -->
+          
         </div>
       
         <div id="footer" data-role="footer" data-position="fixed">
         </div><!-- footer -->
 
-        <div id="startbutton" data-role="content"><!-- data-role="content" -->
+        <div id="startbutton" data-role="content">
           <a class="starts" href="#start" data-role="button"><span lang="en">START_BUTTON</span></a>
         </div> <!-- startbutton -->
 
         <div id="infoBox" data-role="content" class="center">
           <p lang="en">WELCOME</p>
-          <!--Willkommen in der Geographie-Quiz. Diese Anwendung testet Ihre Fähigkeiten europäischen Land. Drücken Sie auf Start, um die Reise zu beginnen!-->
         </div>
         
     </div><!-- home page -->
@@ -62,7 +59,6 @@
       
         <div id="header" data-role="header" data-position="fixed">   
           <h2 id="setRunner"></h2>
-          <!-- <h4 id="setRunner"></h4> -->
           <div id="head2"></div> <!-- place for the question -->
           <a href="#home" data-icon="home" data-iconpos="notext">HOME</a>
           <a href="#result" data-icon="star" id="results"><span lang="en">RESULTS</span></a>
@@ -72,8 +68,7 @@
           <img class="imgs" id="img_1">
           <img class="imgs" id="img_2">
         </div>
-
-          
+  
         <fieldset data-role="controlgroup">
           <div id="radio_centering" > 
           <input type="radio" name="radio-choice" id="radio1" value="choice1" /><label class="radio_centering" for="radio1"></label>
@@ -82,9 +77,7 @@
           <input type="radio" name="radio-choice" id="radio4" value="choice4" /><label class="radio_centering" for="radio4"></label> 
           </div>
         </fieldset>
-          
         
-
         <div id="footer" data-role="footer" data-position="fixed"> <!--question footer-->
           <div data-role="navbar">
             <ul>
@@ -113,17 +106,16 @@
         <div id="footer" data-role="footer" data-position="fixed">
         </div><!-- footer -->
 
-        <div id="playagain" data-role="content">
+        <!-- <div id="playagain" data-role="content">
           <a class="starts" href="#start" data-role="button">PLAY AGAIN</a>
-        </div> <!-- startbutton -->
+        </div> --> <!-- startbutton -->
 
-        <div id="infoBox" data-role="content" class="center">
-          <p>Congratulations! You made it through the quiz. Your result is: </p>
-          <h2 id="getRunner"></h2>
-          <p id="rightAnswers"></p>
-          <p id="wrongAnswers"></p>
+        <div id="infoBox2" data-role="content" class="center">
+          <p lang="en">CONGRATZ</p>
+          <h2 id="getRunner" lang="en">TIME</h2>
+          <p id="rightAnswers"><span lang="en">RIGHT_ANSWER</span></p>
+          <p id="wrongAnswers"><span lang="en">WRONG_ANSWER</span></p>
 
-          <!--Willkommen in der Geographie-Quiz. Diese Anwendung testet Ihre Fähigkeiten europäischen Land. Drücken Sie auf Start, um die Reise zu beginnen!-->
         </div> <!-- info box -->
 
 
