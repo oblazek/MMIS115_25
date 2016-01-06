@@ -34,14 +34,24 @@ ModularMVC.registerHelper('helper.init', function (Widget, LanguageModule) {
 					en: {
 						"START_BUTTON": 'START',
 						"BACK": 'Back',
+						"NEXT": 'Next',
 						"QUIZ": "The Geography Quiz",
+						"RESULTS": "Results",
+						"RESULT": "Result!",
+						"WELCOME": "Welcome to the Geography Quiz. This application tests your European country skills. Press Start to begin the journey!",
+						"LANG": "Deutsch",
 						// "AN_ERROR_OCCURRED_PLEASE_TRY_AGAIN": "An error occurred. Please try again!",
 						"AN_UNEXPECTED_ERROR_OCCURRED.": "An unexpected error occured."
 					},
 					de: {
 						"START_BUTTON": 'Anfang',
 						"BACK": 'Zurück',
+						"NEXT": "Nächsten",
 						"QUIZ": "Die QUIZ",
+						"RESULTS": "Ergebnisse",
+						"RESULT": "Ergebnis!",
+						"WELCOME": "Willkommen in der Geographie-Quiz. Diese Anwendung testet Ihre Fähigkeiten europäischen Land. Drücken Sie auf Start, um die Reise zu beginnen!",
+						"LANG": "English",
 						// "AN_ERROR_OCCURRED_PLEASE_TRY_AGAIN": "Ein Fehler ist aufgetreten. Versuche es erneut!",
 						"AN_UNEXPECTED_ERROR_OCCURRED.": 'Ein unerwarteter Fehler ist aufgetreten.'
 					}
