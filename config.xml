@@ -6,7 +6,7 @@
     <description>Geography Quiz widget</description>
 	<icon src="icon.png" width="16" height="16"/>
 
-	<content src="dist/index.html"/>
+	<content src="build/index.html"/>
 
 	<palette:preferences>
 		<palette:preference name="lang" display_name="Language" datatype="enumeration" default_value="en">
