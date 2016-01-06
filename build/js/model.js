@@ -1,8 +1,9 @@
 /**
- * Model Module interestsdata
+ * Model Module
  *
- * @module model-interestsdata
- * @author Behnam Taraghi <b.taraghi@tugraz.at>
+ * @module model
+ * @author Ondrej Blazek <oblazek@student.tugraz.at>
+ * @author Cecilia Ritzén <critzen@student.tugraz.at>
  *
  * @version 1.0.0
  * @license Apache-2.0
@@ -12,30 +13,31 @@ ModularMVC.registerModel('model', function () {
 	/* public methods */
 	var interFace = {
 		/**
-    	 * saves user interests in a local variable
+    	 * Saves json data in a local variable
     	 *
-    	 * @param {json} i - user interests data
-    	 * @see {@link module:model-interestsdata._user_interests}
+    	 * @param {json} dataFromServer - data from the server
+    	 * 
 		 *
 		 * @public
-		 * @memberOf module:model-interestsdata
+		 * @memberOf module:model
     	 */
-	    setInterests: function(i) {
-			debug('Model setInterest: set the user interests');
-			_user_interests = i;
+	    setJSONData: function(dataFromServer) {
+			
+			cachedJsonData = dataFromServer;
+			
 		},
 		/**
-    	 * returns the user interests data
+    	 * Returns the json data, if they are stored locally. 
     	 *
-    	 * @see {@link module:model-interestsdata._user_interests}
-		 *
 		 * @public
-		 * @memberOf module:model-interestsdata
+		 * @memberOf module:model
 		 * @return {json} user interests data
     	 */
-	    getInterests: function() {
-			debug('Model getInterests: return the user interests');
-			return _user_interests;
+	    getJSONData: function() {
+			if(cachedJsonData != null){
+				debug('Loaded from cache.');
+			}
+			return cachedJsonData;
 		}
 	},
 	
@@ -46,10 +48,9 @@ ModularMVC.registerModel('model', function () {
 	 * @type {json|null}
 	 * @private
 	 * @default null
-	 * @memberOf module:model-interestsdata
+	 * @memberOf module:model
 	 */
-	_user_interests = null;
+	cachedJsonData = null;
 	
-	//debug('model.interestsdata loaded');
     return interFace;
-}());
+}({}));
