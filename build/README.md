@@ -16,9 +16,16 @@ The user is for every question provided with a picture of the country and where 
 
 The widget has got three packages installed via Bower:
 - ModularMVC
-This widget is implemented using ModularMVC framework
-
 - jquery
 - jquery-mobile-bower
 
-### Structure of your modules (screenshots)
+### Structure of modules (screenshots)
+This widget is implemented using ModularMVC framework. This means that the following modules are implemented as support for the framework:
+- Controller. The logic layer that controls what is happening in the widget.
+- Model. The data layer for application data.
+- View. The presentation layer that deals with the HTML. Only communicated with the controller about event handlings in the widget.
+- Helper for language module and widget module.
+
+Widget specific modules:
+- Language module
+- Widget module
