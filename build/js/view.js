@@ -2,14 +2,15 @@
  * View Module
  *
  * @module view
- * @author Ondrej Blazek, Cecilia Ritzen
+ * @author Ondrej Blazek <oblazek@student.tugraz.at> 
+ * @author Cecilia Ritzén <critzen@student.tugraz.at>
  * @requires module:controller
  * @requires Language
  * @requires Widget
  * @requires jQuery
  *
  * @version 1.0.0
- * 
+ * @license Apache-2.0
  */
 ModularMVC.registerView('view', function(Controller, LanguageModule, Widget, $) {
 
@@ -22,7 +23,7 @@ ModularMVC.registerView('view', function(Controller, LanguageModule, Widget, $) 
 		 *	
 		 * @public
 		 * @memberOf module:view
-		 * @see {@link module:view_setClickEvents}
+		 * @see {@link module:view._setClickEvents}
 		 */
 
 		onWidgetReady: function() {
@@ -30,21 +31,34 @@ ModularMVC.registerView('view', function(Controller, LanguageModule, Widget, $) 
 			_setClickEvents();
 		},
 
+
+		/**
+		* 
+		* When called the function will display in corresponding DOMs data/pictures - links are taken from the array (json data). 
+		* Function as well compares, everytime the button 'Next' is clicked, the selected value of the radio inputs with the value (right answer) taken from the json data. 
+		* Based on this the results are updated. 
+		* @param array {json} data
+		* @param indexOfQuestions {number}
+		* @public
+		* @memberOf module:view
+		*/
 		viewPics: function(array, indexOfQuestions) {
-			//debug('viewSomething - ************ - cool huh?');
+			
 			$("input:radio[name=radio-choice]").prop("checked", false).checkboxradio( "refresh" );
 			$('#head2').text(array.questions[indexOfQuestions].q[0]);
             $('#img_1').attr('src', array.questions[indexOfQuestions].img[0]);  
            	$('#img_2').attr('src', array.questions[indexOfQuestions].img[1]);
-           	
+
            	$('#next').click(function(){
            		if($("input:radio[name=radio-choice]:checked").attr('value')===array.questions[indexOfQuestions].q[1]){
+           			
             		$('#rightAnswers').css("color", "#00ff00");
-            		$('#rightAnswers').append((indexOfQuestions+1)+'. Answer correct : '+array.questions[indexOfQuestions].q[1]+'<br>');
+            		$('#rightAnswers').append((indexOfQuestions+1)+': '+array.questions[indexOfQuestions].q[1]+'<br>');
           		}
           		else{
+          			
             		$('#wrongAnswers').css("color", "red");
-           			$('#wrongAnswers').append((indexOfQuestions+1)+'. Answer incorrect: '+$("input:radio[name=radio-choice]:checked").attr('value')+'<br>');  
+           			$('#wrongAnswers').append((indexOfQuestions+1)+': '+$("input:radio[name=radio-choice]:checked").attr('value')+'<br>');  
           		}
 
           		$("input:radio[name=radio-choice]").prop("checked", false).checkboxradio( "refresh" );
@@ -83,7 +97,15 @@ ModularMVC.registerView('view', function(Controller, LanguageModule, Widget, $) 
 		        $('#img_2').attr('src', array.questions[indexOfQuestions].img[1]);   
       		});
 		},
-
+		/**
+		* 
+		* When called the function will change the value of four labels with values taken from the array2 (helper array).
+		* The attributes of the radio inputs are updated, everytime 'Next' button is clicked, so they can then be checked for the selected answer.
+		* @param array2 {json} data
+		* @param indexOfHelperArray {number}
+		* @public
+		* @memberOf module:view
+		*/
 		viewLabels: function(array2, indexOfHelperArray) {
 			$('label[for=radio1]').html(array2[indexOfHelperArray]);
       		$('label[for=radio2]').html(array2[indexOfHelperArray+1]);
@@ -125,54 +147,48 @@ ModularMVC.registerView('view', function(Controller, LanguageModule, Widget, $) 
 	
 	/* private methods */
 	/**
-	 * sets click event for START button 
+	 * Sets click events for Language Switch button, for Start button and for Results.
+	 * If the language switcher is pressed, the widget 'lang' preference will be changed and the '.translatePage'
+	 * function from the Language Module will be called so the data are translated and modified, depending on the preference.
+	 * The external jquery plugin runner/stopwatch.
 	 * @private
 	 * @memberOf module:view
-	 * @see {@link module:controller.userInterestsDataAsked}
+	 * @see {@link module:controller.getAppData}
+	 * @see {@link https://github.com/jylauril/jquery-runner/ Runner/Stopwatch}
 	 */
+	 
     _setClickEvents = function() {
-		//debug('inside click event');
-		//debug('View _setClickEvents(): set click event for button#button_show_interests');
+		
 		$('#languageSwitch').click(function(){
 			if(Widget().getPreference('lang') === "en"){
 				Widget().setPreference('lang', 'de');
-				location.reload();	
+				location.reload(false);	
 			}
 			else{
 				Widget().setPreference('lang', 'en');
 				LanguageModule().translatePage('home');
-				location.reload();
+				location.reload(false);
 			}
 		});
 
         $('.starts').click(function(){
         	Controller().getAppData();
-        	debug(Widget().getPreference('lang'));
+        	
         	LanguageModule().translatePage('start');
 			$('#next').show();
     		$('#setRunner').runner();
     		$('#setRunner').runner('start');	 
         });
         $('#results').click(function(){
+
         	LanguageModule().translatePage('result');
         	$('#setRunner').runner('stop');
-        	$('#getRunner').html('Your time: '+ $('#setRunner').runner('lap'));
-      	}); //end of result
-
-         
+        	$('#getRunner').append($('#setRunner').runner('lap'));
+        
+      	});   
     };
 
-  //   _setPageInitEvent = function() {
-		
-		// //debug('View _setPageInitEvent(): set jQuery mobile init event for page interests');
-  //       $("#home").bind('pageinit', function() {
-		// 	//debug('View pageinit Event triggered: notice the Controller that the user wants to see the Interests data');
-		// 	LanguageModule().translatePage('home');
-  //       });
-  //   };
+	/* end of private methods */	
 	
-	/* end of private methods */
-
-	//debug('view.interestsdata loaded');
     return interFace;
 }(ModularMVC.Controller('controller'), ModularMVC.MVCHelper('Language'), ModularMVC.MVCHelper('Widget'), jQuery));
