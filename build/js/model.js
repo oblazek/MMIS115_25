@@ -35,7 +35,7 @@ ModularMVC.registerModel('model', function () {
     	 */
 	    getJSONData: function() {
 			if(cachedJsonData != null){
-				debug('Loaded from cache.');
+				//debug('Loaded from cache.');
 			}
 			return cachedJsonData;
 		}

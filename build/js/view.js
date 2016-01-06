@@ -44,6 +44,8 @@ ModularMVC.registerView('view', function(Controller, LanguageModule, Widget, $) 
 		*/
 		viewPics: function(array, indexOfQuestions) {
 			
+			Widget().trace();
+
 			$("input:radio[name=radio-choice]").prop("checked", false).checkboxradio( "refresh" );
 			$('#head2').text(array.questions[indexOfQuestions].q[0]);
             $('#img_1').attr('src', array.questions[indexOfQuestions].img[0]);  

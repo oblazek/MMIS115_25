@@ -44,9 +44,7 @@ ModularMVC.registerController('controller', function (View, Model, Request) {
     		var num1 = 0, num2 = 0, num3 = 0, num4 = 0;
 
 			if(jsonData == null) {
-				debug('jsonData == null');
-				//no? then get data from the server
-
+				
 				Request().getServerData(function(serverJsonData){
 					
 					Model().setJSONData(serverJsonData);
@@ -146,14 +144,13 @@ ModularMVC.registerController('controller', function (View, Model, Request) {
 				}, function(msg) {
 					debug(msg);
 				});
-				//debug(data);
 			}
 			else{
 				
 				var a1, w = 0;
 		        	var array1 = [];
 		        	var array2 = []; 
-					//debug('test: '+array.questions[indexOfQuestions].q[0]);	
+					
 					View().viewPics(jsonData, indexOfQuestions);
 					
 		          
