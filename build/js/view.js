@@ -4,12 +4,14 @@
  * @module view
  * @author Ondrej Blazek, Cecilia Ritzen
  * @requires module:controller
+ * @requires Language
+ * @requires Widget
  * @requires jQuery
  *
  * @version 1.0.0
  * 
  */
-ModularMVC.registerView('view', function(Controller, LanguageModule, $) {
+ModularMVC.registerView('view', function(Controller, LanguageModule, Widget, $) {
 
 	/* public methods */
 
@@ -19,12 +21,11 @@ ModularMVC.registerView('view', function(Controller, LanguageModule, $) {
 		 * click events are set
 		 *	
 		 * @public
-		 * @memberOf module:view-interestsdata
-		 * @see {@link module:view-interestsdata._setClickEvents}
+		 * @memberOf module:view
+		 * @see {@link module:view_setClickEvents}
 		 */
 
 		onWidgetReady: function() {
-			//debug('View - WidgetReady');
 			LanguageModule().translatePage('home');
 			_setClickEvents();
 		},
@@ -124,39 +125,54 @@ ModularMVC.registerView('view', function(Controller, LanguageModule, $) {
 	
 	/* private methods */
 	/**
-	 * sets click event for interest button 
+	 * sets click event for START button 
 	 * @private
-	 * @memberOf module:view-interestsdata
-	 * @see {@link module:controller-interestsdata.userInterestsDataAsked}
+	 * @memberOf module:view
+	 * @see {@link module:controller.userInterestsDataAsked}
 	 */
     _setClickEvents = function() {
 		//debug('inside click event');
 		//debug('View _setClickEvents(): set click event for button#button_show_interests');
+		$('#languageSwitch').click(function(){
+			if(Widget().getPreference('lang') === "en"){
+				Widget().setPreference('lang', 'de');
+				location.reload();	
+			}
+			else{
+				Widget().setPreference('lang', 'en');
+				LanguageModule().translatePage('home');
+				location.reload();
+			}
+		});
+
         $('.starts').click(function(){
         	Controller().getAppData();
+        	debug(Widget().getPreference('lang'));
+        	LanguageModule().translatePage('start');
 			$('#next').show();
     		$('#setRunner').runner();
     		$('#setRunner').runner('start');	 
         });
         $('#results').click(function(){
+        	LanguageModule().translatePage('result');
         	$('#setRunner').runner('stop');
         	$('#getRunner').html('Your time: '+ $('#setRunner').runner('lap'));
       	}); //end of result
 
          
-    },
-
-    _setPageInitEvent = function() {
-		
-		//debug('View _setPageInitEvent(): set jQuery mobile init event for page interests');
-        $("#home").bind('pageinit', function() {
-			//debug('View pageinit Event triggered: notice the Controller that the user wants to see the Interests data');
-			LanguageModule().translatePage('home');
-        });
     };
+
+  //   _setPageInitEvent = function() {
+		
+		// //debug('View _setPageInitEvent(): set jQuery mobile init event for page interests');
+  //       $("#home").bind('pageinit', function() {
+		// 	//debug('View pageinit Event triggered: notice the Controller that the user wants to see the Interests data');
+		// 	LanguageModule().translatePage('home');
+  //       });
+  //   };
 	
 	/* end of private methods */
 
 	//debug('view.interestsdata loaded');
     return interFace;
-}(ModularMVC.Controller('controller'), ModularMVC.MVCHelper('Language'), jQuery));
+}(ModularMVC.Controller('controller'), ModularMVC.MVCHelper('Language'), ModularMVC.MVCHelper('Widget'), jQuery));
