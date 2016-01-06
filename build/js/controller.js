@@ -85,10 +85,6 @@ ModularMVC.registerController('controller', function (View, Model, Request) {
 			                      	num = Math.floor(Math.random() * array1.length);
 			                      }
 			                        
-			                      // while(num == 0)
-			                      //   num = Math.floor(Math.random() * array1.length+1);
-			                      
-			                      //$('label[for=radio'+k+']').html(array.mix[num]);
 			                      array2[l+w] = serverJsonData.questions[num].q[1];
 			                      num = Math.floor(Math.random() * array1.length);
 			                      while(a1.localeCompare(serverJsonData.questions[num].q[1]) === 0){
@@ -99,7 +95,7 @@ ModularMVC.registerController('controller', function (View, Model, Request) {
 			                    
 			                    else
 			                    {
-			                      //$('label[for=radio'+k+']').html(array.mix[num]);
+			                      
 			                      array2[l+w] = serverJsonData.questions[num].q[1];
 			                      switch(l){
 			                      case 1:
@@ -162,8 +158,6 @@ ModularMVC.registerController('controller', function (View, Model, Request) {
 		          	{	
 
 		            var x = Math.floor(Math.random()*4+1);              //generating num 1-4 for radiobutt (right answer) 
-		            // if(x==0)
-		            //   console.log('ERROR X == 0');
 		             
 		            array2[x+w] = jsonData.questions[indexOfQuestions].q[1];      //putting the right answer into the array2 with index x+w
 		            
@@ -195,7 +189,7 @@ ModularMVC.registerController('controller', function (View, Model, Request) {
 		                    
 		                    else
 		                    {
-		                      //$('label[for=radio'+k+']').html(array.mix[num]);
+		                      
 		                      array2[l+w] = jsonData.questions[num].q[1];
 		                      switch(l){
 		                      case 1:
