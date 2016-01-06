@@ -1,2 +1,10 @@
+# MMIS115_25 - Geography widget
 
-This is a Geography widget by Ondrej Blazek and Cecilia Ritzen documentation.
+By Ondrej Blazek and Cecilia Ritzén
+
+This widget is implemented using *ModularMVC* framework
+
+xxx packages (dependencies) are installed via bower:
+- ModularMVC
+- jquery
+- jquery-mobile.bower
