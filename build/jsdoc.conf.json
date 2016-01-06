@@ -1,0 +1,10 @@
+{
+  "templates": {
+    "dateFormat": "ddd MMM Do YYYY",
+    "systemName": "Main Page",
+    "copyright": "TU Graz - Copyright © 2016 Ondrej Blazek, Cecilia Ritzén.",
+    "theme": "cosmo",
+    "inverseNav": true,
+    "highlightTutorialCode": true
+  }
+}
