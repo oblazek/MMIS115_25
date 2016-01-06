@@ -27,11 +27,11 @@ The widget has got three packages installed via Bower:
 - jquery
 - jquery-mobile-bower
 
-### Structure of modules 
+### Structure of modules ()
 This widget is implemented using ModularMVC framework. This means that the following modules are implemented as support for the framework:
-- Controller. The logic layer that controls what is happening in the widget.
-- Model. The data layer for application data.
-- View. The presentation layer that deals with the HTML. Only communicated with the controller about event handlings in the widget.
+- Controller. The logic layer that controls what is happening in the widget. Retrieves JSON data, and contains functions to control the question procedure. Randomization of answers for every question, and control of which answers the user chooses. 
+- Model. The data layer for application data. Saves JSON data about the countries, that then can be used by the other application layers.  
+- View. The presentation layer that deals with the HTML and user events. Communicates with the controller about event handlings in the widget.
 - Helper for language module and widget module.
 
 Widget specific modules:
