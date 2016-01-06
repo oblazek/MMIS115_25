@@ -1,4 +1,5 @@
 {
+  "plugins": ["plugins/markdown"],
   "templates": {
     "dateFormat": "ddd MMM Do YYYY",
     "systemName": "Main Page",
@@ -6,5 +7,9 @@
     "theme": "cosmo",
     "inverseNav": true,
     "highlightTutorialCode": true
+  },
+  "markdown": {
+    "parser": "gfm",
+    "hardwrap": true
   }
 }
