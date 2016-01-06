@@ -51,6 +51,18 @@ ModularMVC.registerView('view', function(Controller, LanguageModule, Widget, $) 
             $('#img_1').attr('src', array.questions[indexOfQuestions].img[0]);  
            	$('#img_2').attr('src', array.questions[indexOfQuestions].img[1]);
 
+           	$('#results').click(function(){
+           		if(indexOfQuestions === 41){
+           			if($("input:radio[name=radio-choice]:checked").attr('value')===array.questions[indexOfQuestions].q[1]){
+	            		$('#rightAnswers').css("color", "#00ff00");
+	            		$('#rightAnswers').append((indexOfQuestions+1)+': '+array.questions[indexOfQuestions].q[1]+'<br>');
+          			}	
+          			else{
+	            		$('#wrongAnswers').css("color", "red");
+	           			$('#wrongAnswers').append((indexOfQuestions+1)+': '+$("input:radio[name=radio-choice]:checked").attr('value')+'<br>');  
+          			}
+           		}
+           	});
            	$('#next').click(function(){
            		if($("input:radio[name=radio-choice]:checked").attr('value')===array.questions[indexOfQuestions].q[1]){
            			
