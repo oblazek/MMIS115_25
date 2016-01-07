@@ -39,5 +39,5 @@ This widget is implemented using ModularMVC framework. This means that the follo
 - Helper for language module and widget module.
 
 ####Widget Specific Modules
-- Language module. The module allows controlling which language the widget is set in. The user can choose to set the language into German or English.
-- Widget module. The module allows to manage the settings for the characteristics of the widget, like title and height. It also helps the widget establish connection with http requests and url. *is this right?*
+- Language module. The module allows controlling the language settings in the widget. The user can choose to set the language into German or English.
+- Widget module. The module allows to manage the settings for the characteristics of the widget. Used for setting language preferences to German or English.
