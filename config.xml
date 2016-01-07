@@ -2,7 +2,8 @@
 
 
     <title>Geography quiz</title>
-	<author url="" email="oblazek@student.tugraz.at, critzen@student.tugraz.at">Ondrej Blazek, Cecilia Ritzen</author>
+	<author url="" email="oblazek@student.tugraz.at">Ondrej Blazek</author>
+	<author url="" email="critzen@student.tugraz.at">Cecilia Ritzen</author>
     <description>Geography Quiz widget</description>
 	<icon src="icon.png" width="16" height="16"/>
 
