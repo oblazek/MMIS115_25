@@ -1,4 +1,4 @@
-### Geography widget
+## Geography Quiz Widget
 
 By Ondrej Blazek and Cecilia Ritzén
 
@@ -6,16 +6,16 @@ By Ondrej Blazek and Cecilia Ritzén
 
 The geography widget is a geography quiz that examines knowledge of the European countries. The target group is primary school students. The quiz should provide a good way to check basic geography skills fast and entertaining.
 
-The user is for every question provided with a picture of the country and where it is headed on the European map. The multiple choice answers are randomly given for every question. When all questions are gone through the user gets the opportunity to see the results of every answered questions together with how long it took to complete the quiz.
+The user is for every question provided with a picture of the country and where the country is headed on the European map. The multiple choice answers are randomly given for every question. When all questions are answered the result page is displayed, where the user can see the right and wrong answers together with how long it took to complete the quiz. The user gets the opportunity to retake the quiz to improve the results.
 
 ### Screenshots 
-#### Home page:
+#### Home Page
 ![alt text](../../screenshots/screen_1.png "Screenshot #1")
 
-#### Start page:
+#### Start Page
 ![alt text](../../screenshots/screen_2.png "Screenshot #2")
 
-#### Results:
+#### Results
 ![alt text](../../screenshots/screen_3.png "Screenshot #3")
 
 ### Used APIs 
@@ -42,6 +42,6 @@ This widget is implemented using ModularMVC framework. This means that the follo
 - View. The presentation layer that deals with the HTML and user events. Communicates with the controller about event handlings in the widget.
 - Helper for language module and widget module.
 
-Widget specific modules:
+####Widget Specific Modules
 - Language module. The module allows controlling which language the widget is set in. The user can choose to set the language into German or English.
 - Widget module. The module allows to manage the settings for the characteristics of the widget, like title and height. It also helps the widget establish connection with http requests and url. *is this right?*
