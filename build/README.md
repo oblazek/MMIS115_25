@@ -20,12 +20,13 @@ The user is for every question provided with a picture of the country and where 
 
 ### Used APIs 
 
-- ServerAPI through Helper module. *more info here? And why is this sentence a header haha?*
+- ServerAPI through Helper module. *i dunno, more info here?*
 - Public APIs for each module in the ModularMVC framework. *necessary to say...?*
 - *Any more?*
 
 
 ### Used libs 
+*We're using JQuery which we mention below under Dependencies. Doesn't really need any more explanation right? Just delete this heading?*
 
 
 ### Dependencies 
