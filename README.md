@@ -10,13 +10,13 @@ The user is for every question provided with a picture of the country and where 
 
 ### Screenshots 
 #### Home Page
-![alt text](../../screenshots/screen_1.png "Screenshot #1")
+![alt text](screenshots/screen_1.png "Screenshot #1")
 
 #### Start Page
-![alt text](../../screenshots/screen_2.png "Screenshot #2")
+![alt text](screenshots/screen_2.png "Screenshot #2")
 
 #### Results
-![alt text](../../screenshots/screen_3.png "Screenshot #3")
+![alt text](screenshots/screen_3.png "Screenshot #3")
 
 ### Used APIs 
 
