@@ -28,10 +28,8 @@
 
 }
 
-.radio_centering{
-    display: block;
+#radio_centering {
     margin: 0 auto;
-    width: auto;
 }
 
 #startbutton{
@@ -47,27 +45,23 @@
 #head2{ /*place for the Question*/
     text-align: center;
 }
-.imgs{ 
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
 
-}
 #img_centering{
     text-align:center;
+    margin: 10px 10px 10px 10px;
 }
 
-#img_1{
+#img_1 {
+    display: inline-block;
     max-width: 100px;
     max-height: 182px;
-    /*min-width: 90px; */
     vertical-align: top;
+    margin-right: 10px;
     background: rgba(255,255,255,0.8);
 }
 
-#img_2{
+#img_2 {
+    display: inline-block;
     max-width: 250px;
     max-height: 210px; 
     min-width: 150px;
