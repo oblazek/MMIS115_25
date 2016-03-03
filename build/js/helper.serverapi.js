@@ -54,6 +54,7 @@ ModularMVC.registerHelper('helper.serverapi', function (Widget) {
 		var source = Widget().getPreference('lang') === 'en' ? 'questions.json' : 'fragen.json';
 		jQuery.getJSON(URL+source, function(jsonData) {
 				callback(jsonData);
+				//document.getElementById('head2').innerHTML = "cmoooooon";
 			}	
 		)
 		.fail(function() {

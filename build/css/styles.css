@@ -9,9 +9,10 @@
 #infoBox{
     /*display:inline-block;*/
     margin: auto;
-    min-width: 170px;
-    width: 38.5%;
-    height: 380px;
+    /*min-width: 170px;*/
+    max-width: 250px; 
+    /*38.5%;*/
+    max-height: 350px;
     padding: 10px;
     color: black;
 }

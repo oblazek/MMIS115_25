@@ -73,10 +73,9 @@ module.exports = function(grunt) {
           xpath: '/widget/content/@src',
           value: 'dist/index.html'
         },
-        files: {
-          '../config.xml': '../config.xml',
-        }
-      }
+        files: {'../config.xml': '../config.xml',
+        },
+      },
     },
     processhtml: {
       dist: {
@@ -172,7 +171,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  // Default task.
+  // Default 'jshint', 'concat', 'uglify', 'cssmin', 'jsdoc', 'copy', 'processhtml', 'htmlmin', 'xmlpoke', 'clean'
+  //grunt.registerTask('default', ['jshint', 'xmlpoke']);
   grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'cssmin', 'jsdoc', 'copy', 'processhtml', 'htmlmin', 'xmlpoke', 'clean']);
-
 };

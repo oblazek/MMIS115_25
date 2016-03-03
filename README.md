@@ -1,3 +1,5 @@
+[![Licence](https://img.shields.io/hexpm/l/plug.svg)](https://img.shields.io/hexpm/l/plug.svg)
+
 ## Geography Quiz Widget
 
 By Ondrej Blazek and Cecilia Ritzén

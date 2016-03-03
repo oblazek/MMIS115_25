@@ -1,15 +1,39 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Geography quiz - widget</title><link type="text/css" href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet"><script type="text/javascript" src="js/libs/jquery.min.js"></script><script type="text/javascript" src="js/libs/jquery.mobile-1.4.5.min.js"></script><script type="text/javascript" src="js/libs/ModularMVC.min.js"></script><link type="text/css" rel="stylesheet" href="css/styles.min.css"><script type="text/javascript">//debug function
-      function debug(msg){
-        if(typeof console != 'undefined' && typeof console.log != 'undefined') {
-          console.log(msg);
-        } 
+<!DOCTYPE html>
+<html>
+<head>
 
-      }</script><script type="text/javascript" src="js/MMIS115_25.min.js"></script>
-  </head>
-	<body>
-		
-		<!-- fist page -->
-		<div id="home" data-role="page" data-title="Geography Quiz App - TU Graz">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geography quiz - widget</title>
+
+<!-- build:css css/jquery.mobile-1.4.5.min.css -->
+<link type="text/css" href="bower_components/jquery-mobile-bower/css/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+<!-- /build -->
+
+<!-- build:[src] js/libs/ -->
+<script src="bower_components/jquery/jquery.min.js"></script>
+<script src="bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.min.js"></script>
+<script src="bower_components/ModularMVC/ModularMVC.min.js"></script>
+<!-- /build -->
+
+<!-- build:js js/MMIS115_25.min.js -->
+<script src="js/helper.init.js"></script>
+<script src="js/view.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/helper.serverapi.js"></script>
+<script src="js/model.js"></script>
+<script src="js/jquery.runner.js"></script>
+<!-- /build -->
+
+<!-- build:css css/styles.min.css -->
+<link type="text/css" rel="stylesheet" href="css/styles.css">
+<!-- /build -->
+
+</head>
+<body>
+    
+    <!-- fist page -->
+    <div id="home" data-role="page" data-title="Geography Quiz App - TU Graz">
         
         <div id="header" data-role="header" data-position="fixed">    
           <h1><span lang="en">QUIZ</span></h1>
@@ -35,7 +59,8 @@
       
         <div id="header" data-role="header" data-position="fixed">   
           <h2 id="setRunner"></h2>
-          <div id="head2"></div> <!-- place for the question -->
+
+          <div id="head2"></div><!-- place for the question -->
           <a href="#home" data-icon="home" data-iconpos="notext">HOME</a>
           <a href="#result" data-icon="star" id="results"><span lang="en">RESULTS</span></a>
         </div><!-- header -->
@@ -46,11 +71,11 @@
         </div>
   
         <fieldset data-role="controlgroup">
-          <div id="radio_centering" > 
-          <input type="radio" name="radio-choice" id="radio1" value="choice1" /><label class="radio_centering" for="radio1"></label>
-          <input type="radio" name="radio-choice" id="radio2" value="choice2" /><label class="radio_centering"  for="radio2"></label>
-          <input type="radio" name="radio-choice" id="radio3" value="choice3" /><label class="radio_centering" for="radio3"></label>
-          <input type="radio" name="radio-choice" id="radio4" value="choice4" /><label class="radio_centering" for="radio4"></label> 
+          <div id="radio_centering"> 
+          <input type="radio" name="radio-choice" id="radio1" value="choice1"><label class="radio_centering" for="radio1"></label>
+          <input type="radio" name="radio-choice" id="radio2" value="choice2"><label class="radio_centering" for="radio2"></label>
+          <input type="radio" name="radio-choice" id="radio3" value="choice3"><label class="radio_centering" for="radio3"></label>
+          <input type="radio" name="radio-choice" id="radio4" value="choice4"><label class="radio_centering" for="radio4"></label>
           </div>
         </fieldset>
         
@@ -68,9 +93,6 @@
         </div><!-- footer -->    
 
     </div><!-- start page -->
-
-
-
 
     <div id="result" data-role="page" data-title="Geography quiz app - TU Graz">
 
@@ -97,5 +119,5 @@
 
     </div><!--result page -->
 
-	</body>
+  </body>
 </html>

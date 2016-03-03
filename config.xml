@@ -8,7 +8,7 @@
 	<icon src="icon.png" width="16" height="16"/>
 
 	<content src="dist/index.html"/>
-
+	
 	<palette:preferences>
 		<palette:preference name="lang" display_name="Language" datatype="enumeration" default_value="en">
 			<palette:enumeration value="en" display_value="English"/>
